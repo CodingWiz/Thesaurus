@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+
+<head>
+  <style>
+    p {
+      color: black;
+      font-family: Arial;
+      font-size: 16pt;
+      text-align: left;
+      width: 640px;
+    }
+
+    meter {
+      width: 640px;
+      height: 25px;
+
+      /*-webkit-transform: rotate(270deg);*/
+      /*transform: rotate(270deg);*/
+    }
+
+    table, tr, td {
+      color: black;
+      font-family: Arial;
+      font-size: 16pt;
+      width: 640px;
+      padding-bottom: 10px;
+    }
+  </style>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Thesaurus par Guelleh & Gariepy & Kouma</title>
+  <link rel="stylesheet" type="text/css" href="" />
+
+  <script type="text/javascript" src="WebGl.js"></script>
+  <script type="text/javascript" src="ShaderCouleursTextures.js"></script>
+  <script type="text/javascript" src="glMatrix-0.9.5.min.js"></script>
+  <script type="text/javascript" src="Transformations.js"></script>
+  <script type="text/javascript" src="Camera.js"></script>
+  <script type="text/javascript" src="Textures.js"></script>
+  <script type="text/javascript" src="Sol.js"></script>
+  <script type="text/javascript" src="Murs.js"></script>
+  <script type="text/javascript" src="Creneaux.js"></script>
+  <script type="text/javascript" src="init.js"></script>
+  <script type="text/javascript" src="indicateur.js"></script>
+  <script type="text/javascript" src="Ciel.js"></script>
+  <script type="text/javascript" src="Objets.js"></script>
+  <script type="text/javascript" src="Dessin.js"></script>
+  <script type="text/javascript" src="Déplacement.js"></script>
+  <script type="text/javascript" src="Construction.js"></script>
+  <script type="text/javascript" src="Niveau.js"></script>
+  <script type="text/javascript" src="Chronometre.js"></script>
+  <script type="text/javascript" src="Fleches.js"></script>
+
+</head>
+
+<body onload="demarrer();">
+  <canvas id="monCanvas" width="640" height="640" tabIndex="1" onkeydown="deplacerCamera(); return false">
+    Votre navigateur ne supporte pas la balise canvas
+  </canvas>
+  <br/>
+  <meter id="idMeter" title="Temps Écoulé"></meter>
+
+  <p>
+    <table>
+      <tr >
+          <td style="text-align: left;">
+            Niveau : 
+          </td>
+  
+          <td style="text-align: center;">
+            <span id="idNiveauCourant"></span>
+          </td>
+        </tr>
+
+      <tr >
+        <td style="text-align: left;">
+          Ouvreurs de murs : 
+        </td>
+
+        <td style="text-align: center;">
+          <span id="idMurs"></span>
+        </td>
+      </tr>
+
+      <tr style="text-align: left;">
+        <td>
+            Temps écoulé :
+        </td>
+
+        <td  style="text-align: center;">
+            <span id="chronotime"></span>
+        </td>
+      </tr>
+
+      <tr style="text-align: left;">
+          <td>
+              Score :
+          </td>
+  
+          <td  style="text-align: center;">
+              <span id="idScore"></span>
+          </td>
+        </tr>
+    </table>
+  </p>
+</body>
+
+</html>

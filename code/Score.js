@@ -1,0 +1,2 @@
+var intScore = 300;
+
