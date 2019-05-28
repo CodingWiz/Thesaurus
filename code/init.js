@@ -50,7 +50,7 @@ const OBJ3D_SOL = 0,
     OBJ3D_CRENEAUX = 2,
     OBJ3D_TUNNELS = 3;
 
-const tabImages = ['Transparent.gif', '../Image/sol.jpg', '../Image/mur-int.jpg', '../Image/mur-ext.png', '../Image/Ciel.jpg', '../Image/imgJoueurRouge.png', "../Image/planches-bois-texture-plancher.jpg", "../Image/TresorPuissance2.jpg", "../Image/Fleche.jpg"];
+const tabImages = ['Transparent.gif', '../Image/sol.jpg', '../Image/mur-int.jpg', '../Image/mur-ext.png', '../Image/Ciel.jpg', '../Image/imgJoueurRouge.png', "../Image/planches-bois-texture-plancher.jpg", "../Image/TresorPuissance2.jpg", "../Image/Fleche.jpg", '../Image/imgJoueur.png'];
 const TEX_TRANSPARENT = 0,
     TEX_SOL = 1,
     TEX_MUR_INT = 2,
@@ -60,6 +60,7 @@ const TEX_TRANSPARENT = 0,
     TEX_PLANCHER_MILIEU = 6,
     TEX_TRESOR = 7;
     TEX_Fleche = 8;
+    TEX_FLECHE_2 = 9;
 
 // objet qui manipule les donnees
 // contient un array de tous les objets de la grille
@@ -95,4 +96,6 @@ function demarrer() {
     updateOuvreursMurs();
     updateScore();
     demarrerChrono();
+
+    audioDebutNiveau.play();
 }

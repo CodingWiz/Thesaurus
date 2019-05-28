@@ -30,8 +30,12 @@ function changerNiveau(blnChanger) {
 
     // update le score
     if (blnChanger) {
+        clearTimeout(timerTresor);
+
         //console.log(Math.round(parseFloat(parseFloat(document.getElementById("idMeter").value) * 60)));
         intScore += 10 * Math.round(parseFloat(parseFloat(document.getElementById("idMeter").value) * 60));
+
+        audioDebutNiveau.play();
     }
     else if (!blnChanger && intScore >= 200)
         intScore -= 200;

@@ -6,6 +6,8 @@ var tabKey = new Array();
 
 var intervalBooVueAir = 0;
 
+var timerTresor = 0;
+
 function deplacerCamera() {
     var camera = objScene3D.camera;
 
@@ -47,9 +49,17 @@ function deplacerCamera() {
             if (Grille.blnCollision(objPosX, 1, objPosZ, TEX_TRESOR)) {
                 // niveau suivant si < 10
                 if (intNiveauCourant < 10) {
-                    intNiveauCourant++;
+                    audioTresor.play();
+
+                    timerTresor = setTimeout(function() {
+                        // Your code here
+
+                        //clearTimeout(timerTresor);
+
+                        intNiveauCourant++;
                     
-                    changerNiveau(true);
+                        changerNiveau(true);
+                    }, 2000);
                 }
                 // game over
                 else {
@@ -121,9 +131,17 @@ function deplacerCamera() {
         if (event.keyCode == 45) {
             // niveau suivant si < 10
             if (intNiveauCourant < 10) {
-                intNiveauCourant++;
-                
-                changerNiveau(true);
+                audioTresor.play();
+
+                    timerTresor = setTimeout(function() {
+                        // Your code here
+
+                        //clearTimeout(timerTresor);
+
+                        intNiveauCourant++;
+                    
+                        changerNiveau(true);
+                    }, 2000);
             }
             // game over
             else {
@@ -172,8 +190,8 @@ function deplacerCamera() {
             tabObjets3D.splice(tabObjets3D.indexOf(Grille.obj3DCiel), 1);
             tabObjets3D.splice(tabObjets3D.indexOf(Grille.obj3DTresor), 1);
 
-            Grille.arrObj3DFleches.forEach(obj3D => {
-                tabObjets3D.splice(tabObjets3D.indexOf(obj3D), 1);
+            Grille.arrObj3DFleches.forEach(objGrille => {
+                tabObjets3D.splice(tabObjets3D.indexOf(objGrille.obj3D), 1);
             });
 
             intervalBooVueAir = setInterval(function() {
@@ -210,8 +228,8 @@ function deplacerCamera() {
                     if (!blnMultiKeys) {
                         tabObjets3D.push(Grille.obj3DTresor);
 
-                        Grille.arrObj3DFleches.forEach(obj3D => {
-                            tabObjets3D.push(obj3D);
+                        Grille.arrObj3DFleches.forEach(objGrille => {
+                            tabObjets3D.push(objGrille.obj3D);
                         });
                     }
 
@@ -251,8 +269,8 @@ function deplacerCamera() {
         if (!blnMultiKeys) {
             tabObjets3D.push(Grille.obj3DTresor);
 
-            Grille.arrObj3DFleches.forEach(obj3D => {
-                tabObjets3D.push(obj3D);
+            Grille.arrObj3DFleches.forEach(objGrille => {
+                tabObjets3D.push(objGrille.obj3D);
             });
         }
     }
@@ -263,8 +281,8 @@ function deplacerCamera() {
 
         tabObjets3D.push(Grille.obj3DTresor);
 
-        Grille.arrObj3DFleches.forEach(obj3D => {
-            tabObjets3D.push(obj3D);
+        Grille.arrObj3DFleches.forEach(objGrille => {
+            tabObjets3D.push(objGrille.obj3D);
         });
 
         //alert("Ctrl Shift Espace");
@@ -281,8 +299,8 @@ function deplacerCamera() {
 
         tabObjets3D.splice(tabObjets3D.indexOf(Grille.obj3DTresor), 1);
 
-        Grille.arrObj3DFleches.forEach(obj3D => {
-            tabObjets3D.splice(tabObjets3D.indexOf(obj3D), 1);
+        Grille.arrObj3DFleches.forEach(objGrille => {
+            tabObjets3D.splice(tabObjets3D.indexOf(objGrille.obj3D), 1);
         });
 
         //alert("Ctrl Shift Espace");

@@ -221,7 +221,7 @@ function initScene3D(objgl) {
 
                     // Placement des flèches
 
-                    var obj3D = creerObj3DFleche(objgl, TEX_Fleche, 0, 0);
+                    var obj3D = creerObj3DFleche(objgl, TEX_FLECHE_2, 0, 0);
                     var FlecheX = x - Math.floor(arrGrille.length / 2);
                     var FlecheZ = z - Math.floor(arrGrille.length / 2);
 
@@ -234,8 +234,8 @@ function initScene3D(objgl) {
                     console.log((fltRadiansY * 180 / Math.PI) + " degré, " + FlecheX + " x, " + FlecheZ + " z");
 
                     //  console.log(fltRadiansY);
-                     setAngleY(fltRadiansY * 180 / Math.PI, obj3D.transformations);
-                     //setAngleY(225, obj3D.transformations);
+                     //setAngleY(fltRadiansY * 180 / Math.PI, obj3D.transformations);
+                     setAngleY(180, obj3D.transformations);
 
 
                     
@@ -252,13 +252,13 @@ function initScene3D(objgl) {
                     objGrille.PosY = 2;
                     objGrille.PosZ = z - Math.floor(arrGrille.length / 2);
 
-                    objGrille.TEX = TEX_Fleche;
+                    objGrille.TEX = TEX_FLECHE_2;
                     objGrille.strType = "Fleche";
                     objGrille.obj3D = obj3D;
 
                     // Grille.obj3DTresor = objGrille.obj3D;
                     Grille.arrObjGrille.push(objGrille);
-                    Grille.arrObj3DFleches.push(objGrille.obj3D);
+                    Grille.arrObj3DFleches.push(objGrille);
 
                     tabObjets3D.push(objGrille.obj3D);
 
