@@ -15,7 +15,6 @@ function changerNiveau(blnChanger) {
 
     // update la visibilite des objets
     // de la grille (visible/invisible)
-    updateObjGrilleVisibilite(false);
 
     // La caméra
     resetCamera();
@@ -32,15 +31,23 @@ function changerNiveau(blnChanger) {
     if (blnChanger) {
         clearTimeout(timerTresor);
 
+        /*Grille.arrObjGrille.splice(Grille.arrObjGrille.indexOf(Grille.arrObj3DFleches[0], 1));
+        Grille.arrObj3DFleches.shift();*/
+
         //console.log(Math.round(parseFloat(parseFloat(document.getElementById("idMeter").value) * 60)));
         intScore += 10 * Math.round(parseFloat(parseFloat(document.getElementById("idMeter").value) * 60));
 
         audioDebutNiveau.play();
     }
-    else if (!blnChanger && intScore >= 200)
+    else if (!blnChanger && intScore >= 200) {
+        clearTimeout(timerRecommencer);
+
         intScore -= 200;
+    }
     // game over
     else if (intScore < 200) {
+        audioEchec.play();
+
         intScore = 0;
 
         blnGameOver = true;
@@ -48,6 +55,8 @@ function changerNiveau(blnChanger) {
         gameOver();
     }
     updateScore();
+
+    updateObjGrilleVisibilite(false);
 
     // update le chronometre
     if (intScore > 0 && !blnGameOver) 

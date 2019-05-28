@@ -231,7 +231,7 @@ function initScene3D(objgl) {
                  //   var fltRadiansY = Math.atan2(FlecheX - TresorX, TresorZ - FlecheZ);
                     var fltRadiansY = Math.atan2(FlecheX - TresorX, FlecheZ-TresorZ);
 
-                    console.log((fltRadiansY * 180 / Math.PI) + " degré, " + FlecheX + " x, " + FlecheZ + " z");
+                    //console.log((fltRadiansY * 180 / Math.PI) + " degré, " + FlecheX + " x, " + FlecheZ + " z");
 
                     //  console.log(fltRadiansY);
                      //setAngleY(fltRadiansY * 180 / Math.PI, obj3D.transformations);

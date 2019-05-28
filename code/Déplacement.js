@@ -7,6 +7,7 @@ var tabKey = new Array();
 var intervalBooVueAir = 0;
 
 var timerTresor = 0;
+var timerRecommencer = 0;
 
 function deplacerCamera() {
     var camera = objScene3D.camera;
@@ -63,7 +64,11 @@ function deplacerCamera() {
                 }
                 // game over
                 else {
+                    audioSucces.play();
+
                     blnGameOver = true;
+
+                    clearTimeout(timerTresor);
 
                     gameOver();
                 }
@@ -124,7 +129,13 @@ function deplacerCamera() {
 
         // Home
         if (event.keyCode == 36) {
-            changerNiveau(false);
+            audioRecommencer.play();
+
+            timerRecommencer = setTimeout(function() {
+                clearTimeout(timerRecommencer);
+                
+                changerNiveau(false);
+            }, 2000);
         }
 
         // Insert
@@ -145,8 +156,12 @@ function deplacerCamera() {
             }
             // game over
             else {
+                audioSucces.play();
+
                 blnGameOver = true;
-                
+
+                clearTimeout(timerTresor);
+
                 gameOver();
             }
         }
@@ -233,7 +248,13 @@ function deplacerCamera() {
                         });
                     }
 
-                    changerNiveau(false);
+                    audioRecommencer.play();
+
+                    timerRecommencer = setTimeout(function() {
+                        clearTimeout(timerRecommencer);
+                        
+                        changerNiveau(false);
+                    }, 2000);
                 }
             }, 1000);
         }

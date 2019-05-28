@@ -63,10 +63,14 @@ function demarrerChrono() {
             //console.log(Math.round(parseFloat(parseFloat(document.getElementById("idMeter").value) * 60)));
         }
         else {
+            audioRecommencer.play();
+
+            timerRecommencer = setTimeout(function() {
                 changerNiveau(false);
 
                 effacerCanevas(objgl);
                 dessiner(objgl, objProgShaders, objScene3D);
+            }, 2000);
         }
     }, 1000);
 }
